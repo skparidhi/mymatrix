@@ -181,30 +181,30 @@ h6 br,
 
 h1,
 .mil-h1 {
-  font-size: 86px;
+  font-size: 54px;
 }
 @media screen and (max-width: 1400px) {
   h1,
 .mil-h1 {
-    font-size: 74px;
+    font-size: 45px;
   }
 }
 @media screen and (max-width: 1200px) {
   h1,
 .mil-h1 {
-    font-size: 72px;
+    font-size: 42px;
   }
 }
 @media screen and (max-width: 992px) {
   h1,
 .mil-h1 {
-    font-size: 58px;
+    font-size: 36px;
   }
 }
 @media screen and (max-width: 768px) {
   h1,
 .mil-h1 {
-    font-size: 34px;
+    font-size: 18px;
   }
 }
 
