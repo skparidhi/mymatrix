@@ -3,9 +3,6 @@
 Name: 		Ruizarch
 Version:    1.0
 Developer:	Nazar Miller (millerDigitalDesign)
-Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign
-
-p.s. I am available for Freelance hire (UI design, web development). email: miller.themes@gmail.com
 
 ------------------------------------------- */
 /*--------------------------------------------
@@ -3051,14 +3048,18 @@ footer
 
 .mil-subscribe-form {
   position: relative;
-  height: 70px;
+  /* CHANGED: Removed the rigid 70px height so the form can expand to fit both inputs */
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* NEW: Adds clean spacing between the name and email fields */
 }
 .mil-subscribe-form input {
-  height: 100%;
+  /* CHANGED: Gave each input its own explicit height since the form container is now flexible */
+  height: 70px; 
   width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255); /* FIXED: Swapped to white text so it's readable on your dark theme */
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
@@ -3068,6 +3069,7 @@ footer
   padding: 0 0 0 50px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  box-sizing: border-box; /* NEW: Prevents padding from breaking capsule layout width */
 }
 .mil-subscribe-form input::-webkit-input-placeholder {
   color: rgb(128, 128, 128);
@@ -3110,19 +3112,26 @@ footer
   letter-spacing: 2px;
 }
 .mil-subscribe-form input:focus {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.15); /* Slightly brighter background when active */
+  color: #ffffff !important;                   /* Forces the text to stay white */
   outline: inherit;
 }
+
 .mil-subscribe-form input:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.15); /* Slightly brighter background when hovered */
+  color: #ffffff !important;                   /* Forces the text to stay white */
 }
 .mil-subscribe-form .mil-button {
   position: absolute;
-  top: 15px;
   right: 15px;
+  top: auto !important;
+  transform: none;
+  
+  /* Alternative fine-tuning calculation */
+  bottom: 45px; 
 }
 .mil-subscribe-form.mil-subscribe-form-2 input {
-  height: 100%;
+  height: 70px; /* CHANGED: Matched the standard input height */
   width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
 }
