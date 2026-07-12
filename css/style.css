@@ -1833,32 +1833,47 @@ banner
 
 .mil-portrait-frame {
   position: relative;
+  /* Add Flexbox to push the image to the bottom */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%; /* Ensures the frame stretches to fill its parent column */
 }
+
 .mil-portrait-frame img {
-  position: relative;
-  bottom: 0;
+  /* Removed position: relative and bottom: 0 as Flexbox handles this now */
   width: 100%;
   height: 100%;
+  display: block; /* Removes the default inline gap below images */
   -o-object-fit: contain;
      object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
 }
+
 .mil-portrait-frame .mil-nimbus {
   background: radial-gradient(50% 50% at 50% 50%, #AFA2FE 0%, rgba(250, 168, 69, 0) 100%);
   width: 100%;
   padding-bottom: 100%;
   position: absolute;
+  bottom: 0;
   opacity: 0.6;
+  z-index: -1; /* Ensures the nimbus stays behind the image */
 }
+
 @media screen and (max-width: 768px) {
   .mil-portrait-frame {
     height: 400px;
+    display: block; /* Revert flex on mobile if it interferes with the fixed height */
   }
   .mil-portrait-frame img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: top;
-       object-position: top;
-  }
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+      object-fit: contain;
+    -o-object-position: bottom;
+      object-position: bottom; 
+}
 }
 
 /* -------------------------------------------
